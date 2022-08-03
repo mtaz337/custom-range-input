@@ -1,0 +1,85 @@
+<div class="options">
+  <h1>
+    Reward:<span style="color: green">$</span
+    ><span id="demo" style="color: green"></span>
+  </h1>
+  <input
+    class="slider"
+    id="myRange"
+    type="range"
+    min="0"
+    max="100"
+    step="10"
+    list="steplist"
+    value="40"
+  />
+
+  <div class="ticks">
+    <span id="0" class="o_txt">0</span>
+    <span id="1" class="o_txt">1</span>
+    <span id="2" class="o_txt">2</span>
+    <span id="3" class="o_txt">3</span>
+    <span id="4" class="o_txt">4</span>
+    <span id="5" class="o_txt">5</span>
+    <span id="5" class="o_txt">6</span>
+    <span id="5" class="o_txt">7</span>
+    <span id="5" class="o_txt">8</span>
+    <span id="5" class="o_txt">9</span>
+    <span id="5" class="o_txt">10</span>
+  </div>
+</div>
+
+<style>
+  :root {
+    font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
+      "Roboto", sans-serif;
+  }
+
+  h1 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: darkgray;
+    letter-spacing: 0.2em;
+  }
+
+  .options {
+    width: 30em;
+    border: 1px solid silver;
+    border-radius: 1em;
+    background-color: ghostwhite;
+    padding: 0 0 1em 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ticks {
+    display: flex;
+  }
+
+  .o_txt {
+    flex: 1;
+  }
+
+  .slider {
+    width: 92%; /* manually adjust this to look right */
+    margin: auto;
+    cursor: grab;
+  }
+
+  .o_on {
+    font-weight: 500;
+    color: blue;
+  }
+</style>
+
+<script>
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  var comisson = (slider.value / 10) * 25;
+  output.innerHTML = comisson;
+
+  slider.oninput = function () {
+    output.innerHTML = (this.value / 10) * 25;
+  };
+</script>
